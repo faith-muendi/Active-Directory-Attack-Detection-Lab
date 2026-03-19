@@ -13,4 +13,22 @@ The failure reason indicated incorrect passwords, suggesting a
 possible brute-force or password spraying attack.
 
 This activity demonstrates how authentication attacks can be
-detected using Windows Security logs.
+detected using Windows Security logs. 
+
+
+
+## User Enumeration Attempt
+
+An attempt was made to enumerate domain users using anonymous
+authentication against the domain controller.
+
+Command used:
+
+rpcclient -U "" 192.168.206.145
+
+The request failed with NT_STATUS_LOGON_FAILURE, indicating that
+anonymous access is disabled on the system.
+
+This demonstrates that the domain controller is configured with
+security controls that prevent unauthenticated enumeration of
+Active Directory information.
