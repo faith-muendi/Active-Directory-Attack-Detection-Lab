@@ -32,3 +32,30 @@ anonymous access is disabled on the system.
 This demonstrates that the domain controller is configured with
 security controls that prevent unauthenticated enumeration of
 Active Directory information.
+
+## Incident: Suspicious Authentication Activity
+
+### Summary
+Multiple failed login attempts were detected on the domain controller,
+indicating a potential credential-based attack.
+
+### Evidence
+Event ID: 4625 (Failed Logon)
+
+### Key Findings
+- Target Account: john
+- Source IP Address: 192.168.206.131
+- Logon Type: 3 (Network Logon)
+- Failure Reason: Incorrect password
+
+### Analysis
+The repeated failed login attempts originating from a remote system
+suggest a brute-force or password spraying attack targeting domain accounts.
+
+### Conclusion
+The activity is consistent with an external attacker attempting to gain
+unauthorized access to the domain environment.
+
+### MITRE ATT&CK Mapping
+- T1110: Brute Force
+- T1046: Network Service Discovery
