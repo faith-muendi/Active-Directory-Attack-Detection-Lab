@@ -59,3 +59,23 @@ unauthorized access to the domain environment.
 ### MITRE ATT&CK Mapping
 - T1110: Brute Force
 - T1046: Network Service Discovery
+## Network Activity Analysis (Sysmon Event ID 3)
+
+Following successful authentication, network activity was observed
+originating from the compromised system.
+
+### Key Findings
+- Source IP: 192.168.206.149
+- Destination IP: 192.168.206.145
+- Process: ping.exe
+- User: CORP\john
+
+### Analysis
+The use of ping indicates that the user is actively probing
+internal network systems. This behavior is consistent with
+post-compromise reconnaissance.
+
+### Conclusion
+The attacker is likely mapping the network to identify additional
+targets for lateral movement.
+- 
